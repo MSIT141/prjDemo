@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "demoFileUpdate";
+}
+
+<h2>demoFileUpdate</h2>
+
+@using (Html.BeginForm("demoFileUpdate", "A", FormMethod.Post,new { enctype="multipart/form-data"}))
+{
+    <input type="file" name="photo"/>
+    <input type="submit" value="OK" />
+}
+
+

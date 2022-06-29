@@ -1,0 +1,31 @@
+﻿@using prjDemo.Models;
+@model CCustomer
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>編輯客戶作業</h2>
+<form method="post" action="~/Customer/Edit">
+    <div>
+        <input type="hidden" name="id" value="@Model.id" />
+        Name:<br />
+        <input type="text" name="name" value="@Model.name" />
+    </div>
+    <div>
+        Tel:<br />
+        <input type="text" name="phone" value="@Model.phone"/>
+    </div>
+    <div>
+        Address:<br />
+        <input type="text" name="address" value="@Model.address"/>
+    </div>
+    <div>
+        Password:<br />
+        <input type="text" name="password" value="@Model.password"/>
+    </div>
+    <div>
+        <br />
+        <input type="submit" value="Send" />
+    </div>
+</form>
+

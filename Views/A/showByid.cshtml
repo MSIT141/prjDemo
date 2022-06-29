@@ -1,0 +1,28 @@
+﻿@model prjDemo.Models.CCustomer
+@{
+    ViewBag.Title = "showByid";
+    string photo = "any.jpg";
+    if (Model != null)
+    {
+        photo = Model.id + ".jpg";
+    }
+
+}
+
+
+<img src="~/images/@photo" width="300" height="200"/>
+@{
+    if (Model == null)
+    {
+        <h1>Not Data</h1>
+    }
+    else
+    {
+        <h1>@Model.name</h1>
+        <br/>
+        @Model.phone @:/ @Model.address
+    }
+}
+
+
+

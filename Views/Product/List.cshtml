@@ -1,0 +1,71 @@
+﻿@model IEnumerable<prjDemo.tProduct>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+@using (Html.BeginForm())
+{
+    @:關鍵字 @Html.TextBox("txtKeyword")
+    <input type="submit" value="查詢" />
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-hover table-primary">
+    <tr>
+        <th>
+            No.
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fName)
+        </th>
+        <th>
+            照片
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fPrice)
+        </th>
+        <th></th>
+    </tr>
+    @{
+        int count = 0;
+        foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.fName)
+                </td>
+                <td>
+                    @*<img src="~/images/@item.fImagePath" width="100" height="100" />*@
+                    <img src="~/Product/RetrieveImage/@item.fId"  width="100" height="100"/>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fQty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fPrice)
+                </td>
+                <td>
+                    @Html.ActionLink("編輯", "Edit", new { id = item.fId }, null) |
+                    @Html.ActionLink("刪除", "Delete", "Product", new { id = item.fId }, new {
+                   onclick = "return confirm('確定要刪除資料?')"})
+                </td>
+            </tr>
+        }
+    }
+</table>

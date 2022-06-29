@@ -1,0 +1,13 @@
+﻿@model prjDemo.Models.CCustomer
+@{
+    ViewBag.Title = "Home";
+    string username = "";
+    if (Model != null)
+    {
+        username = Model.name;
+    }
+
+}
+
+<h2>Welcome @username !!!!!</h2>
+
