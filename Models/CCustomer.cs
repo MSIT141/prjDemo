@@ -12,5 +12,6 @@ namespace prjDemo.Models
         public string phone { set; get; }
         public string address { set; get; }
         public string password { set; get; }
+        public string passwordddd { set; get; }
     }
 }
